@@ -1,0 +1,11 @@
+<h3>User Component</h3>
+<p [style.color]='1==2 ? textBlue : textRed'>{{name}}</p>
+<p [class]='myClass'>Name</p>
+<div *ngIf="isDisabled else dataForElse">
+    <input disabled placeholder="Enter name 01">
+</div>
+<ng-template #dataForElse>
+    <input placeholder="Enter name 02">
+</ng-template>
+<p>{{age}}</p>
+<br><br><br><br><br><br><br>
