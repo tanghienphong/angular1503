@@ -17,22 +17,30 @@ import { Component } from '@angular/core';
         <!-- property binding -->
         <p [id]="myId">Your name</p>
         <p [class]="myClass">Your name</p>
-        <input [disabled]='isDisabled' #myInput value="KPT" placeholder="Enter your name">
+        <input
+        [disabled]='isDisabled'
+        #myInput
+        value="KPT"
+        placeholder="Enter your name">
 
-        <!-- Event Binding --->
-        <button (click)="onClickButton(myInput)">Click Me!</button>
+        <!-- event binding -->
+        <button (click)="onClickButton(myInput)">Click me!</button>
         <p>{{myInput.value}}</p>
         <p>{{dataInput}}</p>
+        <hr>
 
-        <input #myInput02 (keyup)='getDataInput(myInput02.value)' placeholder="Enter your name">
+        <input #myInput02
+        (keyup)="getDataInput(myInput02.value)" placeholder="Enter your name">
         <p>{{myInput02.value}}</p>
-        <!-- Trong event KeyUp, khi thay đổi giá trị thì tự động biến myInput02 sẽ tự hiện, không cần thông qua hàm getDataInput -->
-        
-        <hr/>
-        <!-- 2 way Binding, Phải Import FormModule trong app.module.ts --->
+
+        <hr>
+
+        <!-- two way binding -->
+        <!-- import FormModule into app.module.ts -->
         <input [(ngModel)]="myInput03" placeholder="Enter your name">
         <p>{{myInput03}}</p>
 
+        <br><br><br><br><br><br><br>
     `
     ,
     styles: [
@@ -67,18 +75,15 @@ export class UserComponent {
         'text-bold': true
     };
 
+    dataInput: string;
+
     constructor() {
     }
-
-    dataInput: String;
-
-    onClickButton(data: any){
-        console.log(data)
-        console.log(data.value)
-        this.dataInput = data.value
+    onClickButton(data: any) {
+        this.dataInput = data.value;
     }
-
-    getDataInput(data:string){
-        console.log(data)
+    getDataInput(data: string) {
+        // console.log(data);
     }
 }
+

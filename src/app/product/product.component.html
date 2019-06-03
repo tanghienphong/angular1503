@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+        <app-add-product
+        [products]="products"
+        [showForm]="isShowForm"
+        (changeForm)="receiveToggleForm($event)"
+        ></app-add-product>
+        <app-filter-product
+        [inputFilterMode]="filterMode"
+        (filterMode)="getFilterMode($event)"
+        ></app-filter-product>
+        <app-item-product 
+        [productList]="products"
+        [filterMode]="filterMode"
+        ></app-item-product>
+    </div>
+  </div>
+</div>
+<!-- pipe -->
+<!-- <pre>
+  {{products | json}}
+</pre> -->

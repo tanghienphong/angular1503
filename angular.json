@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular1503": {
+    "ng1503": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular1503",
+            "outputPath": "dist/ng1503",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular1503:build"
+            "browserTarget": "ng1503:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular1503:build:production"
+              "browserTarget": "ng1503:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular1503:build"
+            "browserTarget": "ng1503:build"
           }
         },
         "test": {
@@ -103,7 +103,7 @@
         }
       }
     },
-    "angular1503-e2e": {
+    "ng1503-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular1503:serve"
+            "devServerTarget": "ng1503:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular1503:serve:production"
+              "devServerTarget": "ng1503:serve:production"
             }
           }
         },
@@ -132,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "angular1503"
+  "defaultProject": "ng1503"
 }

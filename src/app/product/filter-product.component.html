@@ -1,0 +1,9 @@
+<div style="margin:20px" >
+    <select class="form-control mg-20"
+    (change)="changeFilterMode($event.target.value)">
+      <option value="SHOW_ALL">SHOW ALL</option>
+      <option value="WISHLIST">SHOW WISHLIST</option>
+      <option value="NONE_WISHLIST">NONE WISHLIST</option>
+    </select>
+    <h2>{{inputFilterMode}}</h2> 
+  </div>
