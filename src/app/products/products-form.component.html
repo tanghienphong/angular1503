@@ -1,0 +1,20 @@
+<div style="margin:20px">
+    <button class="btn btn-primary" *ngIf="!isShowForm" (click)="toggleForm()">+</button>
+    <div *ngIf="isShowForm">
+        <h2 class="text-center">Add New Product</h2>
+        <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="Name" formControlName="name">
+            </div>
+            <div class="form-group">
+                <label>Price</label>
+                <input type="text" class="form-control" placeholder="Price" formControlName="price">
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-success" value="Add" [disabled]="productForm.invalid">
+                <input type="button" (click)="toggleForm()" class="btn btn-danger" value="Cancel" style="margin-left:10px">
+            </div>
+        </form>
+    </div>
+</div>

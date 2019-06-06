@@ -8,6 +8,7 @@ import { Product } from '../products-list';
 export class ItemProductComponent {
   @Input() productList: Product[];
   @Input() filterMode: string;
+
   setWishlist(id: string) {
     const product: Product = this.productList.find(p => p.id === id);
     product.wishlist = !product.wishlist;

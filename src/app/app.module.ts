@@ -13,9 +13,15 @@ import { ParentComponent } from './interact/parent.component';
 import { AddProductComponent } from './product/add-product.component';
 import { ItemProductComponent } from './product/item-product.component';
 import { FilterProductComponent } from './product/filter-product.component';
-import {StoreModule} from "@ngrx/store";
-import { counterReducer } from './ngrxstore/reducer';
+
+import { StoreModule } from '@ngrx/store';
+import { counterReducer, productReducer, toggleFormAddProduct } from './ngrxstore/reducer';
 import { CounterComponent } from './counter/counter.component';
+import { ChildComponent } from './counter/child.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductsFormComponent } from './products/products-form.component';
+import { ProductsItemComponent } from './products/products-item.component';
+import { ProductsFilterComponent } from './products/products-filter.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +35,12 @@ import { CounterComponent } from './counter/counter.component';
     AddProductComponent,
     ItemProductComponent,
     FilterProductComponent,
-    CounterComponent
+    CounterComponent,
+    ChildComponent,
+    ProductsComponent,
+    ProductsFormComponent,
+    ProductsItemComponent,
+    ProductsFilterComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +48,9 @@ import { CounterComponent } from './counter/counter.component';
     FormsModule,
     ReactiveFormsModule,
     StoreModule.forRoot({
-      counter: counterReducer
+      counter: counterReducer,
+      products: productReducer,
+      toggleForm: toggleFormAddProduct
     })
   ],
   providers: [],

@@ -20,7 +20,6 @@ export class ProductComponent implements OnInit {
     return this.isShowForm = mode;
   }
 
- 
   getFilterMode(data: string) {
     return this.filterMode = data;
   }
