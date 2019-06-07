@@ -22,6 +22,9 @@ import { ProductsComponent } from './products/products.component';
 import { ProductsFormComponent } from './products/products-form.component';
 import { ProductsItemComponent } from './products/products-item.component';
 import { ProductsFilterComponent } from './products/products-filter.component';
+import { WeatherComponent } from './request-api/weather.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductApiComponent } from './request-api/product-api.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,9 @@ import { ProductsFilterComponent } from './products/products-filter.component';
     ProductsComponent,
     ProductsFormComponent,
     ProductsItemComponent,
-    ProductsFilterComponent
+    ProductsFilterComponent,
+    WeatherComponent,
+    ProductApiComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,8 @@ import { ProductsFilterComponent } from './products/products-filter.component';
       counter: counterReducer,
       products: productReducer,
       toggleForm: toggleFormAddProduct
-    })
+    }),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
